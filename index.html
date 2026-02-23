@@ -1,172 +1,151 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Эмма — SMM-портфолио</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Эмма — SMM-портфолио</title>
 
-  <!-- Иконки -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      color: #222;
-      background: #f9f9f9;
-    }
+<style>
+  /* Базовые стили */
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f9;
+    color: #222;
+  }
 
-    main {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
+  a { text-decoration: none; }
 
-    h1 { font-size: 36px; margin-bottom: 5px; }
-    .subtitle { font-size: 20px; color: #666; margin-bottom: 20px; }
+  /* Шапка */
+  header {
+    background: linear-gradient(90deg, #5BC0EB, #FF6B6B);
+    color: #fff;
+    text-align: center;
+    padding: 50px 20px;
+  }
+  header h1 { margin: 0; font-size: 42px; }
+  header .subtitle { margin: 10px 0; font-size: 22px; }
+  header .button {
+    display: inline-block;
+    padding: 14px 24px;
+    background: #fff;
+    color: #222;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+    margin-top: 10px;
+  }
+  header .button:hover { background: #eee; transform: translateY(-3px); }
 
-    img.profile {
-      width: 180px;
-      border-radius: 50%;
-      display: block;
-      margin-bottom: 20px;
-    }
+  main { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
 
-    section {
-      margin-top: 50px;
-    }
+  section { margin-top: 60px; }
+  h2 { font-size: 30px; border-bottom: 3px solid #eee; padding-bottom: 10px; margin-bottom: 25px; }
 
-    h2 {
-      border-bottom: 2px solid #eee;
-      padding-bottom: 10px;
-      margin-bottom: 20px;
-      font-size: 26px;
-    }
+  /* Обо мне */
+  .about {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    align-items: center;
+  }
+  .about img {
+    width: 200px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: 0.3s;
+  }
+  .about img:hover { transform: scale(1.05); }
+  .about .text { flex: 1; min-width: 250px; }
 
-    h3 {
-      margin-top: 20px;
-    }
+  /* Карусель инструментов */
+  .carousel {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding: 15px 0;
+  }
+  .tool {
+    min-width: 130px;
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px 10px;
+    text-align: center;
+    flex-shrink: 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+  }
+  .tool i {
+    font-size: 28px;
+    margin-bottom: 10px;
+    display: block;
+    color: #FF6B6B;
+  }
+  .tool:hover { transform: translateY(-5px); box-shadow: 0 12px 25px rgba(0,0,0,0.15); }
 
-    p, li {
-      margin-bottom: 10px;
-    }
+  /* Кейсы */
+  .cases {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .case {
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+  .case:hover { transform: translateY(-5px); box-shadow: 0 12px 25px rgba(0,0,0,0.15); }
+  .case a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 18px;
+    background: #FF6B6B;
+    color: #fff;
+    border-radius: 30px;
+    transition: 0.3s;
+  }
+  .case a:hover { background: #5BC0EB; }
 
-    ul {
-      padding-left: 20px;
-    }
+  /* Списки */
+  ul { padding-left: 20px; }
+  li { margin-bottom: 8px; }
 
-    /* Карусель инструментов */
-    .carousel {
-      display: flex;
-      gap: 16px;
-      overflow-x: auto;
-      padding: 15px 0;
-    }
-
-    .tool {
-      min-width: 130px;
-      border: 1px solid #ddd;
-      border-radius: 14px;
-      padding: 20px 10px;
-      text-align: center;
-      background: #fff;
-      flex-shrink: 0;
-      transition: 0.3s;
-    }
-
-    .tool i {
-      font-size: 28px;
-      margin-bottom: 10px;
-      display: block;
-    }
-
-    .tool:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    }
-
-    /* Кейсы */
-    .cases {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    .case {
-      background: #fff;
-      border-radius: 14px;
-      padding: 20px;
-      transition: 0.3s;
-    }
-
-    .case:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    }
-
-    .case a {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 15px;
-      background: #000;
-      color: #fff;
-      border-radius: 30px;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    .case a:hover {
-      background: #444;
-    }
-
-    /* Кнопка Telegram */
-    a.button {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 12px 20px;
-      background: #000;
-      color: #fff;
-      border-radius: 30px;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    a.button:hover {
-      background: #444;
-      transform: translateY(-2px);
-    }
-
-    /* Контакты внизу */
-    footer {
-      background: #222;
-      color: #fff;
-      padding: 40px 20px;
-      text-align: center;
-      margin-top: 50px;
-    }
-
-    footer a { color: #fff; text-decoration: underline; }
-  </style>
+  /* Контакты */
+  footer {
+    background: #222;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 60px;
+  }
+  footer a { color: #FF6B6B; text-decoration: underline; }
+</style>
 </head>
 
 <body>
-<main>
-  <!-- Шапка -->
-  <img src="foto1.jpg" alt="Эмма" class="profile">
+
+<header>
   <h1>Эмма</h1>
   <div class="subtitle">SMM-специалист</div>
   <a href="https://t.me/fifteeseventee" target="_blank" class="button">Написать в Telegram</a>
+</header>
 
+<main>
   <!-- Обо мне -->
   <section>
     <h2>Обо мне</h2>
-    <p>
-      Целеустремленный СММ-специалист с сильным визуальным бэкграундом.
-      Прошла комплексное обучение по SMM от Нетологии, что позволило
-      структурировать знания в области маркетинговых стратегий, аналитики и управления проектами.
-    </p>
+    <div class="about">
+      <img src="foto1.jpg" alt="Эмма">
+      <div class="text">
+        <p>Целеустремленный СММ-специалист с сильным визуальным бэкграундом. Прошла комплексное обучение по SMM от Нетологии, что позволило структурировать знания в области маркетинговых стратегий, аналитики и управления проектами.</p>
+      </div>
+    </div>
   </section>
 
   <!-- Инструменты -->
@@ -178,7 +157,3 @@
       <div class="tool"><i class="fa-solid fa-rectangle-ad"></i>VK Реклама</div>
       <div class="tool"><i class="fa-solid fa-table"></i>Google Таблицы</div>
       <div class="tool"><i class="fa-solid fa-clock"></i>SMMplanner</div>
-      <div class="tool"><i class="fa-brands fa-figma"></i>Figma</div>
-      <div class="tool"><i class="fa-solid fa-palette"></i>Canva</div>
-    </div>
-  </section>
