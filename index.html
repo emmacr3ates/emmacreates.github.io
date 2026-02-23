@@ -2,62 +2,78 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Эмма — SMM-специалист</title>
+  <title>Эмма — SMM-портфолио</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- ИКОНКИ -->
+  <!-- Иконки -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
   <style>
     body {
-      font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
       line-height: 1.6;
       color: #222;
+      background: #f9f9f9;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px;
     }
 
     h1 { font-size: 36px; margin-bottom: 5px; }
-    .subtitle { font-size: 20px; color: #666; }
-    h2 { margin-top: 50px; }
-    h3 { margin-top: 30px; }
+    .subtitle { font-size: 20px; color: #666; margin-bottom: 20px; }
 
-    a { color: #000; }
-
-    /* КНОПКА */
-    .btn {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 12px 20px;
-      background: #000;
-      color: #fff;
-      border-radius: 30px;
-      text-decoration: none;
-      transition: 0.3s;
+    img.profile {
+      width: 180px;
+      border-radius: 50%;
+      display: block;
+      margin-bottom: 20px;
     }
 
-    .btn:hover {
-      background: #444;
-      transform: translateY(-2px);
+    section {
+      margin-top: 50px;
     }
 
-    /* КАРУСЕЛЬ */
+    h2 {
+      border-bottom: 2px solid #eee;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+      font-size: 26px;
+    }
+
+    h3 {
+      margin-top: 20px;
+    }
+
+    p, li {
+      margin-bottom: 10px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    /* Карусель инструментов */
     .carousel {
       display: flex;
       gap: 16px;
       overflow-x: auto;
-      padding: 20px 0;
+      padding: 15px 0;
     }
 
     .tool {
-      min-width: 140px;
+      min-width: 130px;
       border: 1px solid #ddd;
       border-radius: 14px;
       padding: 20px 10px;
       text-align: center;
-      transition: 0.3s;
+      background: #fff;
       flex-shrink: 0;
+      transition: 0.3s;
     }
 
     .tool i {
@@ -71,68 +87,98 @@
       box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     }
 
-    ul { padding-left: 20px; }
+    /* Кейсы */
+    .cases {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
 
-    .contacts p { margin: 6px 0; }
+    .case {
+      background: #fff;
+      border-radius: 14px;
+      padding: 20px;
+      transition: 0.3s;
+    }
+
+    .case:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .case a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background: #000;
+      color: #fff;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .case a:hover {
+      background: #444;
+    }
+
+    /* Кнопка Telegram */
+    a.button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 20px;
+      background: #000;
+      color: #fff;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    a.button:hover {
+      background: #444;
+      transform: translateY(-2px);
+    }
+
+    /* Контакты внизу */
+    footer {
+      background: #222;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    footer a { color: #fff; text-decoration: underline; }
   </style>
 </head>
 
 <body>
-
+<main>
+  <!-- Шапка -->
+  <img src="foto1.jpg" alt="Эмма" class="profile">
   <h1>Эмма</h1>
   <div class="subtitle">SMM-специалист</div>
+  <a href="https://t.me/fifteeseventee" target="_blank" class="button">Написать в Telegram</a>
 
-  <a class="btn" href="https://t.me/fifteeseventee" target="_blank">
-    Написать в Telegram
-  </a>
+  <!-- Обо мне -->
+  <section>
+    <h2>Обо мне</h2>
+    <p>
+      Целеустремленный СММ-специалист с сильным визуальным бэкграундом.
+      Прошла комплексное обучение по SMM от Нетологии, что позволило
+      структурировать знания в области маркетинговых стратегий, аналитики и управления проектами.
+    </p>
+  </section>
 
-  <h2>Обо мне</h2>
-  <p>
-    Целеустремлённый SMM-специалист с сильным визуальным бэкграундом.
-    Прошла комплексное обучение по SMM от Нетологии, что позволило
-    структурировать знания в области маркетинговых стратегий,
-    аналитики и управления проектами.
-  </p>
-
-  <h2>Мои инструменты</h2>
-  <div class="carousel">
-    <div class="tool"><i class="fa-solid fa-chart-line"></i>Popsters</div>
-    <div class="tool"><i class="fa-solid fa-bullseye"></i>TargetHunter</div>
-    <div class="tool"><i class="fa-solid fa-rectangle-ad"></i>VK Реклама</div>
-    <div class="tool"><i class="fa-solid fa-table"></i>Google Таблицы</div>
-    <div class="tool"><i class="fa-solid fa-clock"></i>SMMplanner</div>
-    <div class="tool"><i class="fa-brands fa-figma"></i>Figma</div>
-    <div class="tool"><i class="fa-solid fa-palette"></i>Canva</div>
-  </div>
-
-  <h2>Учебный проект</h2>
-  <h3>Школа иностранных языков «Культурный Диалог»</h3>
-  <p>
-    Лингвистический центр с широким спектром курсов иностранных языков
-    по доступной цене.
-  </p>
-
-  <strong>Цель:</strong>
-  <p>
-    Оживление digital-присутствия и рост узнаваемости бренда.
-  </p>
-
-  <strong>Задачи:</strong>
-  <ul>
-    <li>Анализ аудитории и конкурентов</li>
-    <li>Разработка контент-стратегии</li>
-    <li>Обновление визуального стиля</li>
-    <li>Таргетированная реклама и блогеры</li>
-  </ul>
-
-  <a class="btn" href="cases.html">Смотреть кейсы</a>
-
-  <h2>Контакты</h2>
-  <div class="contacts">
-    <p>📞 +7 (901) 181-90-50</p>
-    <p>📧 89685211450a@gmail.com</p>
-    <p>💬 <a href="https://t.me/fifteeseventee" target="_blank">Telegram</a></p>
-  </div>
-
-</body>
-</html>
+  <!-- Инструменты -->
+  <section>
+    <h2>Мои инструменты</h2>
+    <div class="carousel">
+      <div class="tool"><i class="fa-solid fa-chart-line"></i>Popsters</div>
+      <div class="tool"><i class="fa-solid fa-bullseye"></i>TargetHunter</div>
+      <div class="tool"><i class="fa-solid fa-rectangle-ad"></i>VK Реклама</div>
+      <div class="tool"><i class="fa-solid fa-table"></i>Google Таблицы</div>
+      <div class="tool"><i class="fa-solid fa-clock"></i>SMMplanner</div>
+      <div class="tool"><i class="fa-brands fa-figma"></i>Figma</div>
+      <div class="tool"><i class="fa-solid fa-palette"></i>Canva</div>
+    </div>
+  </section>
